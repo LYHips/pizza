@@ -10,9 +10,9 @@
 
     <header>
         <div class="logo">PIZZA<span>DOMA</span></div>
-        <div class="cart-status">Кошик: <span id="cart-count">0</span> шт.</div>
+        <div class="cart" onclick="toggleCart()">Кошик: <span id="cart-count" >0</span> шт.</div>
     </header>
-
+ 
     <section class="hero">
         <h1>Справжня італійська піца</h1>
         <p>Гаряча, соковита та з хрусткою скоринкою. Доставка до 30 хвилин у будь-який куточок міста!</p>
@@ -27,10 +27,41 @@
         </div>
     </section>
 
+
+
+
+
+<div id="cart-modal" class="cart-modal">
+    <div class="cart-header">
+        <h3>Ваше замовлення</h3>
+
+        <button class="close-cart" onclick="toggleCart()">&times;</button>
+    </div>
+
+    
+    <div id="cart-items" class="cart-items-list">
+        
+
+        
+        
+    </div>
+
+
+    <div class="cart-footer">
+        <div class="cart-total">
+            <span>Загальна сума:</span>
+            <span id="cart-total-amount"> ₴</span>
+        </div>
+        <button class="btn-checkout" onclick="checkout()">Замовити</button>
+    </div>
+</div>
+    
+
     <footer>
         <p>&copy; 2026 PIZZADOMA. Усі права захищені. Доставка з 10:00 до 22:00.</p>
     </footer>
 
     <script src="script.js"></script>
+
 </body>
 </html>

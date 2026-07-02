@@ -37,7 +37,7 @@ header {
     color: #f39c12;
 }
 
-.cart-status {
+.cart{
     background-color: #e74c3c;
     color: white;
     padding: 10px 20px;
@@ -45,6 +45,12 @@ header {
     font-weight: bold;
     font-size: 14px;
 }
+
+.cart:hover {
+    background-color: #c44529;
+}
+
+
 
 
 .hero {
@@ -176,4 +182,141 @@ footer {
     padding: 30px;
     margin-top: 40px;
     font-size: 14px;
+}
+
+/* --- СТИЛІ ВІКНА КОШИКА --- */
+.cart-modal {
+    position: fixed;
+    top: 80px; /* Одразу під вашою закріпленою шапкою */
+    right: 10%; /* Вирівнювання по кнопці кошика */
+    width: 360px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e1e8ed;
+    display: none; /* За замовчуванням приховано, міняти на 'block' через JS */
+    flex-direction: column;
+    z-index: 2000;
+    overflow: hidden;
+}
+
+/* Якщо кошик відкритий (можна додавати цей клас через JS) */
+.cart-modal.active {
+    display: flex;
+}
+
+.cart-header {
+    padding: 15px 20px;
+    background-color: #fcf9f5;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-header h3 {
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #95a5a6;
+    cursor: pointer;
+}
+
+.close-cart:hover {
+    color: #e74c3c;
+}
+
+/* Список товарів */
+.cart-items-list {
+    max-height: 300px; /* Якщо товарів багато, з'явиться прокрутка */
+    overflow-y: auto;
+    padding: 10px 20px;
+}
+
+/* Рядок одного товару */
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-title {
+    font-size: 15px;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.cart-item-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.cart-item-qty {
+    color: #7f8c8d;
+}
+
+.cart-item-price {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Низ кошика */
+.cart-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    background-color: #fcf9f5;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #2c3e50;
+}
+
+#cart-total-amount {
+    color: #e74c3c;
+    font-size: 18px;
+}
+
+.btn-checkout {
+    width: 100%;
+    background-color: #27ae60; /* Зелена для фінішної дії */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-checkout:hover {
+    background-color: #219653;
 }
